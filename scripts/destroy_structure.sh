@@ -24,6 +24,6 @@ for env in dev staging prod; do
 done
 
 echo "🗑 Removing all initialized directories and files..."
-rm -rf "$ROOT/environments" "$ROOT/platforms" "$ROOT"/{versions.tf,providers.tf,variables.tf,outputs.tf,terraform.tfvars}
+rm -rf "$ROOT/environments" "$ROOT/platforms"
 
 echo "✅ All resources destroyed and directory cleaned."

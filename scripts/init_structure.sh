@@ -15,7 +15,7 @@ echo "📂 Creating Terraform repo structure in current directory..."
 # ---------------------------
 # Root-level files
 # ---------------------------
-touch $ROOT/{README.md,versions.tf,providers.tf,variables.tf,outputs.tf,terraform.tfvars}
+touch $ROOT/{README.md}
 
 # ---------------------------
 # Environments
