@@ -36,11 +36,11 @@ infra-as-code/                     # Root of your Terraform repo (Git repo root)
 │       ├── main.tf
 │       ├── variables.tf
 │       └── outputs.tf
-├── discord/
-│   ├── server/
-│   ├── channel/
-│   └── role/
-│   
+└── discord/
+    ├── server/
+    ├── channel/
+    └── role/
+    
 
 ```
 
