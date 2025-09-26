@@ -1,5 +1,5 @@
 module "test_repo" {
-  source = "../../platforms/github/modules/repo"
+  source = "../github/repo"
 
   context = {
     owner       = local.org_name
@@ -13,7 +13,7 @@ module "test_repo" {
 }
 
 module "infra" {
-  source = "../../platforms/github/modules/repo"
+  source = "../github/repo"
 
   context = {
     owner       = local.org_name
