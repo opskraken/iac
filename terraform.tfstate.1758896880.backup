@@ -1,0 +1,580 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.3",
+  "serial": 32,
+  "lineage": "18b3d50d-da0e-9527-06a5-a7dd8c2551d3",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.iac",
+      "mode": "managed",
+      "type": "github_branch_protection",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "allows_deletions": false,
+            "allows_force_pushes": false,
+            "enforce_admins": false,
+            "force_push_bypassers": [],
+            "id": "BPR_kwDOP3Rn-84EDUQm",
+            "lock_branch": false,
+            "pattern": "main",
+            "repository_id": "iac",
+            "require_conversation_resolution": false,
+            "require_signed_commits": false,
+            "required_linear_history": false,
+            "required_pull_request_reviews": [],
+            "required_status_checks": [],
+            "restrict_pushes": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjIifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.iac",
+      "mode": "managed",
+      "type": "github_repository_topics",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "iac",
+            "repository": "iac",
+            "topics": [
+              "automation",
+              "github",
+              "iac",
+              "infrastructure-as-code",
+              "managed",
+              "terraform"
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.iac",
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "maintainers",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"9b5e24cbdb425a90b070c314ad48d26140c468abd49746163557bbada841ae9a\"",
+            "id": "14341600:iac",
+            "permission": "maintain",
+            "repository": "iac",
+            "team_id": "14341600"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.infra",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": true,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": true,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": true,
+            "description": "Infra managed by Terraform",
+            "etag": "W/\"643570818a55eb245f6ba0e29cc273185c5083f73de14e68b5e524099ab62656\"",
+            "full_name": "opskraken/iac",
+            "git_clone_url": "git://github.com/opskraken/iac.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": true,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/opskraken/iac",
+            "http_clone_url": "https://github.com/opskraken/iac.git",
+            "id": "iac",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "iac",
+            "node_id": "R_kgDOP3Rn-w",
+            "pages": [],
+            "primary_language": "HCL",
+            "private": false,
+            "repo_id": 1064593403,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:opskraken/iac.git",
+            "svn_url": "https://github.com/opskraken/iac",
+            "template": [],
+            "topics": [
+              "automation",
+              "github",
+              "iac",
+              "infrastructure-as-code",
+              "managed",
+              "terraform"
+            ],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.infra",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "opskraken/iac",
+            "etag": "W/\"7475308759f4628569f25a1670cfba688b2265cadbf48a2c64d7d6318c17b5d6\"",
+            "id": "14341588",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "iac",
+            "node_id": "T_kwDODfsxsM4A2tXU",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "iac"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.infra",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "maintainers",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Maintainers team for opskraken/iac",
+            "etag": "W/\"48a8bbae44530399fcfeb1f0e6d871827d729cf8f520a6b40ab0a3c577bd0553\"",
+            "id": "14341600",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "iac-maintainers",
+            "node_id": "T_kwDODfsxsM4A2tXg",
+            "parent_team_id": "14341588",
+            "parent_team_read_id": "14341588",
+            "parent_team_read_slug": "iac",
+            "privacy": "closed",
+            "slug": "iac-maintainers"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.infra",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "readonly",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Read-only team for opskraken/iac",
+            "etag": "W/\"28027b529faf5f086ce12cc005ffbd8896062563e164f5c54a3813337e1af768\"",
+            "id": "14341598",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "iac-readonly",
+            "node_id": "T_kwDODfsxsM4A2tXe",
+            "parent_team_id": "14341588",
+            "parent_team_read_id": "14341588",
+            "parent_team_read_slug": "iac",
+            "privacy": "closed",
+            "slug": "iac-readonly"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.infra",
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "readonly",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"d2b4ba70a256abc6120d968508784982c47a675e76f36d089308c1640f655201\"",
+            "id": "14341598:iac",
+            "permission": "pull",
+            "repository": "iac",
+            "team_id": "14341598"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_branch_protection",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "allows_deletions": false,
+            "allows_force_pushes": false,
+            "enforce_admins": false,
+            "force_push_bypassers": null,
+            "id": "BPR_kwDOP3Rn584EDURi",
+            "lock_branch": false,
+            "pattern": "main",
+            "repository_id": "test-repo",
+            "require_conversation_resolution": false,
+            "require_signed_commits": false,
+            "required_linear_history": false,
+            "required_pull_request_reviews": [],
+            "required_status_checks": [],
+            "restrict_pushes": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
+          "dependencies": [
+            "module.test_repo.github_repository.default"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_repository",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_auto_merge": true,
+            "allow_merge_commit": false,
+            "allow_rebase_merge": false,
+            "allow_squash_merge": true,
+            "allow_update_branch": false,
+            "archive_on_destroy": true,
+            "archived": false,
+            "auto_init": true,
+            "default_branch": "main",
+            "delete_branch_on_merge": true,
+            "description": "A test repository managed by Terraform",
+            "etag": "W/\"e2cc37b8ce2a201f755ce8ae7f975fe007d1d2c93d1cf8a5604bfdbe909bd822\"",
+            "full_name": "opskraken/test-repo",
+            "git_clone_url": "git://github.com/opskraken/test-repo.git",
+            "gitignore_template": null,
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": true,
+            "has_projects": false,
+            "has_wiki": false,
+            "homepage_url": "",
+            "html_url": "https://github.com/opskraken/test-repo",
+            "http_clone_url": "https://github.com/opskraken/test-repo.git",
+            "id": "test-repo",
+            "ignore_vulnerability_alerts_during_read": null,
+            "is_template": false,
+            "license_template": null,
+            "merge_commit_message": "PR_TITLE",
+            "merge_commit_title": "MERGE_MESSAGE",
+            "name": "test-repo",
+            "node_id": "R_kgDOP3Rn5w",
+            "pages": [],
+            "primary_language": "",
+            "private": false,
+            "repo_id": 1064593383,
+            "security_and_analysis": [
+              {
+                "advanced_security": [],
+                "secret_scanning": [
+                  {
+                    "status": "disabled"
+                  }
+                ],
+                "secret_scanning_push_protection": [
+                  {
+                    "status": "disabled"
+                  }
+                ]
+              }
+            ],
+            "squash_merge_commit_message": "COMMIT_MESSAGES",
+            "squash_merge_commit_title": "COMMIT_OR_PR_TITLE",
+            "ssh_clone_url": "git@github.com:opskraken/test-repo.git",
+            "svn_url": "https://github.com/opskraken/test-repo",
+            "template": [],
+            "topics": [
+              "automation",
+              "github",
+              "iac",
+              "infrastructure-as-code",
+              "terraform"
+            ],
+            "visibility": "public",
+            "vulnerability_alerts": false,
+            "web_commit_signoff_required": false
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_repository_topics",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "test-repo",
+            "repository": "test-repo",
+            "topics": [
+              "automation",
+              "github",
+              "iac",
+              "infrastructure-as-code",
+              "terraform"
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "module.test_repo.github_repository.default"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "opskraken/test-repo",
+            "etag": "W/\"a6f1f1e1a8fe9e248373423dceaf8d08c5c73f3ace7d5c81f5bc55643f5bb303\"",
+            "id": "14341587",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "test-repo",
+            "node_id": "T_kwDODfsxsM4A2tXT",
+            "parent_team_id": "",
+            "parent_team_read_id": "",
+            "parent_team_read_slug": "",
+            "privacy": "closed",
+            "slug": "test-repo"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "maintainers",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Maintainers team for opskraken/test-repo",
+            "etag": "W/\"3b052292caf63546242c543775739810c59e4c7d933ad1ba05b142389f91c148\"",
+            "id": "14341595",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "test-repo-maintainers",
+            "node_id": "T_kwDODfsxsM4A2tXb",
+            "parent_team_id": "14341587",
+            "parent_team_read_id": "14341587",
+            "parent_team_read_slug": "test-repo",
+            "privacy": "closed",
+            "slug": "test-repo-maintainers"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "module.test_repo.github_team.default"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_team",
+      "name": "readonly",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "create_default_maintainer": false,
+            "description": "Read-only team for opskraken/test-repo",
+            "etag": "W/\"56d0dc48a0e97f377972f5eae39ea32c901a973d2a3f61fa713151f26386f265\"",
+            "id": "14341592",
+            "ldap_dn": "",
+            "members_count": 0,
+            "name": "test-repo-readonly",
+            "node_id": "T_kwDODfsxsM4A2tXY",
+            "parent_team_id": "14341587",
+            "parent_team_read_id": "14341587",
+            "parent_team_read_slug": "test-repo",
+            "privacy": "closed",
+            "slug": "test-repo-readonly"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ==",
+          "dependencies": [
+            "module.test_repo.github_team.default"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "maintainers",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"12b1d61ee275b3f9ad9e7d6c6d6018c7fe603a6c3fd4d8d25d217acc97a49707\"",
+            "id": "14341595:test-repo",
+            "permission": "maintain",
+            "repository": "test-repo",
+            "team_id": "14341595"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.test_repo.github_repository.default",
+            "module.test_repo.github_team.default",
+            "module.test_repo.github_team.maintainers"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.test_repo",
+      "mode": "managed",
+      "type": "github_team_repository",
+      "name": "readonly",
+      "provider": "provider[\"registry.terraform.io/integrations/github\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "etag": "W/\"c967ec5c225559ad3e889d6006ae89e10f1d4d3ff6e3b2e5469c161e58c9879f\"",
+            "id": "14341592:test-repo",
+            "permission": "pull",
+            "repository": "test-repo",
+            "team_id": "14341592"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.test_repo.github_repository.default",
+            "module.test_repo.github_team.default",
+            "module.test_repo.github_team.readonly"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
