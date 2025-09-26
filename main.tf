@@ -39,9 +39,23 @@ module "laundry" {
     owner       = local.org_name
     name        = "laundry-service"
     visibility  = "public"
-    description = "Infra managed by Terraform"
+    description = "laundry service description"
     codereaders = []
-    maintainers = ["enghasib", "saadrupai"]
-    topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
+    maintainers = ["enghasib"]
+    topics      = []
+  }
+}
+
+module "archive_infra" {
+  source = "./github/repo"
+
+  context = {
+    owner       = local.org_name
+    name        = "archive-infra"
+    visibility  = "public"
+    description = "Manage archive infra from this repo"
+    codereaders = []
+    maintainers = ["saadrupai"]
+    topics      = []
   }
 }
