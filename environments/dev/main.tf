@@ -1,4 +1,3 @@
-
 module "test_repo" {
   source = "../../platforms/github/modules/repo"
 
@@ -23,6 +22,6 @@ module "infra" {
     description = "Infra managed by Terraform"
     codereaders = []
     maintainers = []
-    topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation"]
+    topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
   }
 }
