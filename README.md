@@ -18,33 +18,29 @@ The goal of this repo is to:
 ```
 infra-as-code/                     # Root of your Terraform repo (Git repo root)
 ├── README.md                      # High-level docs
-├── environments/                  # Environment compositions (each with its own state)
-│      ├── backend.tf             # Remote backend for dev (S3/TFC/etc.)
-│      ├── main.tf                # Composes platform modules
-│      ├── providers.tf           # Provider configs (with aliases if needed)
-│      ├── variables.tf           # Env-specific variables
-│      └── terraform.tfvars       # Inputs for this env
+├── backend.tf             # Remote backend for dev (S3/TFC/etc.)
+├── main.tf                # Composes platform modules
+├── providers.tf           # Provider configs (with aliases if needed)
+├── variables.tf           # Env-specific variables
+└── terraform.tfvars       # Inputs for this env
 ├── github/
-│   ├── modules/               # Reusable GitHub modules
-│   │   ├── repo/
-│   │   │   ├── main.tf
-│   │   │   ├── variables.tf
-│   │   │   └── outputs.tf
-│   │   ├── team/
-│   │   │   ├── main.tf
-│   │   │   ├── variables.tf
-│   │   │   └── outputs.tf
-│   │   └── org/
-│   │       ├── main.tf
-│   │       ├── variables.tf
-│   │       └── outputs.tf
-│   └── examples/              # Optional usage examples
+│   ├── repo/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── team/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── org/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
 ├── discord/
-│   ├── modules/
-│   │   ├── server/
-│   │   ├── channel/
-│   │   └── role/
-│   └── examples/
+│   ├── server/
+│   ├── channel/
+│   └── role/
+│   
 
 ```
 
@@ -59,8 +55,6 @@ infra-as-code/                     # Root of your Terraform repo (Git repo root)
 
 
 ## 🏗️ Environment
-
-Environment has its own isolated state and configuration:
 
 * **`backend.tf`** → Defines the remote backend for storing state (e.g., S3, Terraform Cloud).
 * **`providers.tf`** → Configures platform providers (GitHub, Discord, etc.).
