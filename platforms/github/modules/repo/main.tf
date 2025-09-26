@@ -14,6 +14,7 @@ variable "context" {
     owner                         = string
     name                          = string
     description                   = string
+    visibility                    = string
     codereaders                   = list(string)
     maintainers                   = list(string)
     topics                        = list(string)
@@ -23,7 +24,7 @@ variable "context" {
 resource "github_repository" "default" {
   name                   = var.context.name
   description            = var.context.description
-  visibility             = "public"
+  visibility             = var.context.visibility
   has_issues             = true
   has_projects           = false
   has_wiki               = false
