@@ -40,9 +40,9 @@ help: ## Show this help message
 	@echo "Examples:"
 	@echo "  make init-structure         # Bootstrap repo structure"
 	@echo "  make destroy-structure      # Destroy all resources and remove repo"
-	@echo "  make init ENV=dev           # Initialize dev environment"
-	@echo "  make plan ENV=staging       # Show plan for staging"
-	@echo "  make apply ENV=prod         # Apply changes to prod"
+	@echo "  make init           		 # Initialize terraform in environment set in .env"
+	@echo "  make plan       		     # Show plan for terraform in environment set in .env"
+	@echo "  make apply ENV=prod         # Apply changes to terraform in environment set in .env"
 	@echo "  make fmt                    # Format all Terraform code"
 	@echo
 
