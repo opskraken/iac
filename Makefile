@@ -21,7 +21,7 @@ TF_OPTS = -chdir=$(ENV_DIR)
 # Targets
 # =====================================================================
 
-.PHONY: help init-structure destroy-structure init plan apply destroy fmt validate lint clean all
+.PHONY: help init-structure destroy-structure init plan apply destroy fmt validate lint clean wipe-state all
 
 help: ## Show this help message
 	@echo
@@ -42,7 +42,8 @@ help: ## Show this help message
 	@echo "  make destroy-structure      # Destroy all resources and remove repo"
 	@echo "  make init           		 # Initialize terraform in environment set in .env"
 	@echo "  make plan       		     # Show plan for terraform in environment set in .env"
-	@echo "  make apply ENV=prod         # Apply changes to terraform in environment set in .env"
+	@echo "  make Apply			         # Apply changes to terraform in environment set in .env"
+	@echo "  make wipe-state			 # Wipe Terraform state for selected ENV"
 	@echo "  make fmt                    # Format all Terraform code"
 	@echo
 
@@ -101,6 +102,14 @@ apply: ## Apply changes for selected ENV
 
 destroy: ## Destroy all resources for selected ENV (⚠️ dangerous)
 	$(TF) $(TF_OPTS) destroy -auto-approve
+
+# ---------------------------------------------------------------------
+# Wipe Terraform state files
+# ---------------------------------------------------------------------
+wipe-state: ## Wipe Terraform state files for selected ENV
+	@chmod +x ./scripts/wipe_state.sh; \
+	if command -v dos2unix >/dev/null 2>&1; then dos2unix ./scripts/wipe_state.sh; fi; \
+	./scripts/wipe_state.sh
 
 fmt: ## Format Terraform code
 	$(TF) fmt -recursive

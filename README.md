@@ -18,11 +18,6 @@ The goal of this repo is to:
 ```
 infra-as-code/                     # Root of your Terraform repo (Git repo root)
 ├── README.md                      # High-level docs
-├── versions.tf                    # Required TF + provider versions
-├── providers.tf                   # Common provider sources (not creds!)
-├── variables.tf                   # Global variables (org_name, etc.)
-├── outputs.tf                     # Global outputs if needed
-├── terraform.tfvars               # Optional default vars
 ├── environments/                  # Environment compositions (each with its own state)
 │   ├── dev/
 │   │   ├── backend.tf             # Remote backend for dev (S3/TFC/etc.)
@@ -67,12 +62,22 @@ infra-as-code/                     # Root of your Terraform repo (Git repo root)
 │   └── common/                    # Cross-platform helpers
 │       └── tags/                  # Example: standard tagging/labels module
 └── scripts/                       # Helper scripts (init, fmt, validate, CI)
-    ├── init.sh
-    ├── plan.sh
-    └── apply.sh
+    ├── init.sh                    # not initialized without running init_structure.sh
+    ├── plan.sh                    # not initialized without running init_structure.sh
+    └── apply.sh                   # not initialized without running init_structure.sh
+    └── init_structure.sh                   # initialize terraform template
+    └── destroy_structure.sh                   # destroy terraform template
 ```
 
 ---
+
+## 🏗️ Get started
+  - clone the repo
+  - if you want to start fresh: `make destroy-structure`: Destroy all Terraform resources and removes all current codes and directories except README and scripts folder. after than execute `init-structure`: Bootstrap Terraform repo structure (only runs if not exists)
+  - make your own IAC from the fresh template!
+  - otherwise you can modify my current IAC!
+---
+
 
 ## 🏗️ Environments
 
@@ -84,14 +89,13 @@ Each environment (`dev`, `staging`, `prod`) has its own isolated state and confi
 * **`variables.tf`** → Defines environment-specific variables.
 * **`terraform.tfvars`** → Supplies values for variables (e.g., repo names, server configs).
 
-👉 To work in an environment, `cd` into it:
+👉 To work in an environment:
 
-```bash
-cd environments/dev
-terraform init
-terraform plan
-terraform apply
-```
+  - write environment value in ENVIRONMENT variable in .env
+  - make changes to environment terraform in the environment directory /environment
+  - `make init` - initialize terraform
+  - `make plan` - plan terraform
+  - `make apply`- apply terraform
 
 Each environment is independent and has **its own state file**.
 
