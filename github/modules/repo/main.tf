@@ -32,7 +32,7 @@ resource "github_repository_topics" "default" {
 }
 
 resource "github_branch_protection" "default" {
-  repository_id    = github_repository.default.name
+  repository_id    = github_repository.default.id
   pattern          = "main"
   enforce_admins   = false
   allows_deletions = false

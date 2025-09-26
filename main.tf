@@ -17,7 +17,7 @@ module "infra" {
 
   context = {
     owner       = local.org_name
-    name        = "infrastructure"
+    name        = "iac"
     visibility  = "public"
     description = "Infra managed by Terraform"
     codereaders = []

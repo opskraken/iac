@@ -19,54 +19,33 @@ The goal of this repo is to:
 infra-as-code/                     # Root of your Terraform repo (Git repo root)
 ├── README.md                      # High-level docs
 ├── environments/                  # Environment compositions (each with its own state)
-│   ├── dev/
-│   │   ├── backend.tf             # Remote backend for dev (S3/TFC/etc.)
-│   │   ├── main.tf                # Composes platform modules
-│   │   ├── providers.tf           # Provider configs (with aliases if needed)
-│   │   ├── variables.tf           # Env-specific variables
-│   │   └── terraform.tfvars       # Inputs for this env
-│   ├── staging/
-│   │   ├── backend.tf
-│   │   ├── main.tf
-│   │   ├── providers.tf
-│   │   ├── variables.tf
-│   │   └── terraform.tfvars
-│   └── prod/
-│       ├── backend.tf
-│       ├── main.tf
-│       ├── providers.tf
-│       ├── variables.tf
-│       └── terraform.tfvars
-├── platforms/                     # Group by external platform
-│   ├── github/
-│   │   ├── modules/               # Reusable GitHub modules
-│   │   │   ├── repo/
-│   │   │   │   ├── main.tf
-│   │   │   │   ├── variables.tf
-│   │   │   │   └── outputs.tf
-│   │   │   ├── team/
-│   │   │   │   ├── main.tf
-│   │   │   │   ├── variables.tf
-│   │   │   │   └── outputs.tf
-│   │   │   └── org/
-│   │   │       ├── main.tf
-│   │   │       ├── variables.tf
-│   │   │       └── outputs.tf
-│   │   └── examples/              # Optional usage examples
-│   ├── discord/
-│   │   ├── modules/
-│   │   │   ├── server/
-│   │   │   ├── channel/
-│   │   │   └── role/
-│   │   └── examples/
-│   └── common/                    # Cross-platform helpers
-│       └── tags/                  # Example: standard tagging/labels module
-└── scripts/                       # Helper scripts (init, fmt, validate, CI)
-    ├── init.sh                    # not initialized without running init_structure.sh
-    ├── plan.sh                    # not initialized without running init_structure.sh
-    └── apply.sh                   # not initialized without running init_structure.sh
-    └── init_structure.sh                   # initialize terraform template
-    └── destroy_structure.sh                   # destroy terraform template
+│      ├── backend.tf             # Remote backend for dev (S3/TFC/etc.)
+│      ├── main.tf                # Composes platform modules
+│      ├── providers.tf           # Provider configs (with aliases if needed)
+│      ├── variables.tf           # Env-specific variables
+│      └── terraform.tfvars       # Inputs for this env
+├── github/
+│   ├── modules/               # Reusable GitHub modules
+│   │   ├── repo/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │   ├── team/
+│   │   │   ├── main.tf
+│   │   │   ├── variables.tf
+│   │   │   └── outputs.tf
+│   │   └── org/
+│   │       ├── main.tf
+│   │       ├── variables.tf
+│   │       └── outputs.tf
+│   └── examples/              # Optional usage examples
+├── discord/
+│   ├── modules/
+│   │   ├── server/
+│   │   ├── channel/
+│   │   └── role/
+│   └── examples/
+
 ```
 
 ---
@@ -79,25 +58,15 @@ infra-as-code/                     # Root of your Terraform repo (Git repo root)
 ---
 
 
-## 🏗️ Environments
+## 🏗️ Environment
 
-Each environment (`dev`, `staging`, `prod`) has its own isolated state and configuration:
+Environment has its own isolated state and configuration:
 
 * **`backend.tf`** → Defines the remote backend for storing state (e.g., S3, Terraform Cloud).
 * **`providers.tf`** → Configures platform providers (GitHub, Discord, etc.).
 * **`main.tf`** → Composes modules from `platforms/` to build infrastructure.
 * **`variables.tf`** → Defines environment-specific variables.
-* **`terraform.tfvars`** → Supplies values for variables (e.g., repo names, server configs).
-
-👉 To work in an environment:
-
-  - write environment value in ENVIRONMENT variable in .env
-  - make changes to environment terraform in the environment directory /environment
-  - `make init` - initialize terraform
-  - `make plan` - plan terraform
-  - `make apply`- apply terraform
-
-Each environment is independent and has **its own state file**.
+* **`terraform.tfvars`** → Supplies values for variables (e.g., repo names, server configs). 
 
 ---
 
@@ -140,28 +109,9 @@ Instead, use environment variables or a credentials manager.
 1. **Branch & PR workflow**
 
    * Create a feature branch (`feature/new-repo`).
-   * Make changes in the appropriate `environment/` or `platforms/` module.
+   * Make changes in the `environment/` or `platforms/` module.
    * Open a Pull Request → run CI (fmt, validate, plan).
    * Once approved → merge to main.
-
-2. **Apply changes**
-
-   * Checkout `main`.
-   * Navigate to the environment:
-
-     ```bash
-     cd environments/prod
-     terraform init
-     terraform plan
-     terraform apply
-     ```
-   * This ensures changes are **applied only in the correct environment**.
-
-3. **Scripts (optional shortcut)**
-
-   * `./scripts/init.sh` → Initialize Terraform.
-   * `./scripts/plan.sh` → Run plan with common options.
-   * `./scripts/apply.sh` → Apply changes.
 
 ---
 
@@ -198,14 +148,6 @@ github_repos = [
 ]
 ```
 
-2. Run:
-
-```bash
-cd environments/dev
-terraform plan
-terraform apply
-```
-
 ---
 
 ## 📖 References
@@ -221,5 +163,4 @@ terraform apply
 
 * **Modules** → define reusable infra per platform.
 * **Environments** → control where infra is deployed.
-* **Scripts** → simplify common tasks.
 * **Backends** → ensure isolated and safe state management.
