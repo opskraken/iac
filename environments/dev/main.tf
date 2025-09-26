@@ -5,6 +5,7 @@ module "test_repo" {
   context = {
     owner       = local.org_name
     name        = "test-repo"
+    visibility  = "private"
     description = "A test repository managed by Terraform"
     codereaders = []
     maintainers = []
@@ -18,6 +19,7 @@ module "infra" {
   context = {
     owner       = local.org_name
     name        = "infra"
+    visibility  = "public"
     description = "Infra managed by Terraform"
     codereaders = []
     maintainers = []
