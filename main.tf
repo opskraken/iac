@@ -1,5 +1,5 @@
 module "test_repo" {
-  source = "../github/repo"
+  source = "./github/repo"
 
   context = {
     owner       = local.org_name
@@ -13,11 +13,11 @@ module "test_repo" {
 }
 
 module "infra" {
-  source = "../github/repo"
+  source = "./github/repo"
 
   context = {
     owner       = local.org_name
-    name        = "iac"
+    name        = "infra"
     visibility  = "public"
     description = "Infra managed by Terraform"
     codereaders = []
