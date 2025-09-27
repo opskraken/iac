@@ -130,16 +130,22 @@ Instead, use environment variables or a credentials manager.
 
 ## 🧪 Example: Adding a New GitHub Repo
 
-1. Edit `environments/dev/terraform.tfvars`:
+1. Add repo resource in `main.tf`:
 
 ```hcl
-github_repos = [
-  {
-    name        = "analytics"
-    description = "Analytics repo"
-    topics      = ["terraform", "data"]
+module "infra" {
+  source = "./github/repo"
+
+  context = {
+    owner       = local.org_name
+    name        = "infra"
+    visibility  = "public"
+    description = "Infra managed by Terraform"
+    codereaders = []
+    maintainers = []
+    topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
   }
-]
+}
 ```
 
 ---
