@@ -27,7 +27,7 @@ module "infra" {
     visibility  = "public"
     description = "Infra managed by Terraform"
     codereaders = []
-    maintainers = []
+    maintainers = ["saadrupai"]
     topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
   }
 }
@@ -141,5 +141,19 @@ module "archive_infra" {
     codereaders = []
     maintainers = ["saadrupai"]
     topics      = []
+  }
+}
+
+module "k8s_infra" {
+  source = "./github/repo"
+
+  context = {
+    owner       = local.org_name
+    name        = "k8s-infra"
+    visibility  = "public"
+    description = "k8s-infra managed by Terraform"
+    codereaders = []
+    maintainers = ["saadrupai"]
+    topics      = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
   }
 }
