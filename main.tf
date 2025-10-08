@@ -143,3 +143,17 @@ module "archive_infra" {
     topics      = []
   }
 }
+
+module "vps_study" {
+  source = "./github/repo"
+
+  context = {
+    owner       = local.org_name
+    name        = "vps-study"
+    visibility  = "private"
+    description = "Manage vps to do primary studies and rnd"
+    codereaders = []
+    maintainers = ["saadrupai"]
+    topics      = []
+  }
+}
